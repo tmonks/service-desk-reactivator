@@ -1,6 +1,7 @@
 # Solarwinds Service Desk Incident Reactivator
 
-This script will find any incidents in Service Desk in a state of "Paused" and a due date of today, and return them to an "In Progress" state.
+This script will allow you to set incidents in Solarwinds Service Desk to an on hold state, set a Due Date and then have them automatically reactivated to "In Progress" when that date is reached.
+It fill find any incidents in the defined state and a due date of today, set their state to "In Progress", and add a comment that the incident has been reactivated (which will also generate a notification).
 
 ## Setup
 
