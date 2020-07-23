@@ -13,9 +13,8 @@ const isToday = (dateString) => {
   return dateString.substr(0, 10) === new Date().toISOString().substr(0, 10);
 };
 
-// Changes the status of incidentId to "In Progress"
+// Change the status of incidentId to "In Progress"
 async function reactivateIncident(incidentId) {
-  // const URL = "https://api.samanage.com/incidents/57271553.json";
   const URL = BASE_URL + "/incidents/" + incidentId + ".json";
 
   try {
@@ -25,7 +24,7 @@ async function reactivateIncident(incidentId) {
   }
 }
 
-// adds comment to incidentId
+// Add comment to incidentId
 async function commentIncident(incidentId, comment) {
   const URL = BASE_URL + "/incidents/" + incidentId + "/comments.json";
 
@@ -61,7 +60,7 @@ async function activateDueIncidents(state) {
     try {
       let results = await axios.get(URL, requestOptions);
 
-      console.log("Page " + currentPage + ": Found " + results.data.length + " incidents");
+      // console.log("Page " + currentPage + ": Found " + results.data.length + " incidents");
       totalPages = results.headers["x-total-pages"] || 1;
       currentPage++;
 
@@ -80,7 +79,5 @@ async function activateDueIncidents(state) {
   }
 }
 
-// incident for testing: #572 / 57399763
-// reactivateIncident(57399763);
-// commentIncident(57399763, "FROM API: Due date reached. Reactivating incident.");
+// reactivate all incidents due today that are in state "Paused"
 activateDueIncidents("Paused");
