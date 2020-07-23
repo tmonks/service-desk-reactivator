@@ -9,7 +9,7 @@ It fill find any incidents in the defined state and a due date of today, set the
 2. Create a `.env` file with your API key.
 
 ```
-SOLARWINDS_APIKEY=[paste your API key here, no quotes needed]
+SOLARWINDS_API_KEY=[paste your API key here, no quotes or brackets]
 ```
 
 3. Update the state you want to reactivate in the last line of `reactivator.js`. We used a custom state called "Paused", but you might want to use "Oh Hold" or something else.
